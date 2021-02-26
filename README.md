@@ -18,5 +18,15 @@ Lets deploy application to Azure and add allowed IP addresses of application to 
 
 Lets try a query to our application, does it work?
 
-# Python start
+# Python setup
+Install command line components
+https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local#v2
+https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 
+Create application.
+
+func init AtomLoadHttp --python 
+cd AtomLoadHttp 
+func new --name HttpTrigger --template "HTTP trigger" --authlevel "anonymous"
+py -m venv .venv 
+.venv\scripts\activate
