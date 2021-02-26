@@ -26,6 +26,8 @@ https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 Create application.
 
 func init AtomLoadHttp --python 
+or alternatively 
+func init AtomLoadHttp --worker-runtime python --docker
 cd AtomLoadHttp 
 func new --name HttpTrigger --template "HTTP trigger" --authlevel "anonymous"
 py -m venv .venv 
