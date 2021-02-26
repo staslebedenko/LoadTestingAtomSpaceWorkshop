@@ -1,0 +1,24 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingExcludedTypes": "Request",
+      "samplingSettings": {
+        "isEnabled": true
+      }
+    }
+  }, "extensions": {
+    "http": {
+      "routePrefix": "",
+      "maxOutstandingRequests": 200,
+      "maxConcurrentRequests": 200
+    },
+    "queues": {
+      "maxPollingInterval": "00:00:10",
+      "visibilityTimeout": "00:00:30",
+      "batchSize": 1,
+      "maxDequeueCount": 8,
+      "newBatchThreshold": 2
+    }
+  }
+}
