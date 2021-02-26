@@ -30,3 +30,9 @@ cd AtomLoadHttp
 func new --name HttpTrigger --template "HTTP trigger" --authlevel "anonymous"
 py -m venv .venv 
 .venv\scripts\activate
+
+Then we need to deploy created app to Azure
+
+az login
+
+func azure functionapp publish <APP_NAME>
