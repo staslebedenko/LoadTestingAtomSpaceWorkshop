@@ -1,4 +1,9 @@
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Loading dotenv.
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,7 +17,7 @@ SECRET_KEY = 'p*=aqjg$_i+y#z*g(ldj0d1g5_u76yr#v#l%g7i*%3zieo-q=c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['alextestatom.azurewebsites.net', 'localhost', '127.0.0.1']
 
 # Application definition
 
@@ -62,8 +67,12 @@ WSGI_APPLICATION = 'load_testing_django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': os.getenv('DATABASE'),
+        'USER': os.getenv('USER'),
+        'PASSWORD': os.getenv('PASSWORD'),
+        'HOST': os.getenv('SERVER'),
+        'PORT': os.getenv('PORT')
     }
 }
 
