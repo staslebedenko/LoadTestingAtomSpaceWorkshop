@@ -1,4 +1,4 @@
-# LoadTestingAtomSpaceWorkshop
+# Load Testing Azure infrastructure Workshop(C# and Python). For IT2School and AtomSpace.
 
 - The goal of this workshop is to create
 
